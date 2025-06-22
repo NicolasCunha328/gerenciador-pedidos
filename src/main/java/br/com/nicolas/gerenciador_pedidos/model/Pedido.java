@@ -8,8 +8,10 @@ import java.time.LocalDate;
 @Entity
 public class Pedido {
     @Id
-    private final Long id;
-    private final LocalDate data;
+    private Long id;
+    private LocalDate data;
+
+    public Pedido(){}
 
     public Pedido(Long id, LocalDate data) {
         this.id = id;

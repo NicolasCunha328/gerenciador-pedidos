@@ -8,9 +8,11 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private final String nome;
+    private String nome;
     @Column(name = "valor")
-    private final Double preco;
+    private Double preco;
+
+    public Produto(){}
 
     public Produto(String nome, Double preco) {
         this.nome = nome;

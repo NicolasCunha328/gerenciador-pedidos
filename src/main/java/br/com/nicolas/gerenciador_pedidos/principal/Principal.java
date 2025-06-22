@@ -6,7 +6,6 @@ import br.com.nicolas.gerenciador_pedidos.model.Produto;
 import br.com.nicolas.gerenciador_pedidos.repository.CategoriaRepository;
 import br.com.nicolas.gerenciador_pedidos.repository.PedidoRepository;
 import br.com.nicolas.gerenciador_pedidos.repository.ProdutoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 

@@ -6,8 +6,10 @@ import jakarta.persistence.Id;
 @Entity
 public class Categoria {
     @Id
-    private final Long id;
-    private final String nome;
+    private Long id;
+    private String nome;
+
+    public Categoria(){}
 
     public Categoria(Long id, String nome) {
         this.id = id;
