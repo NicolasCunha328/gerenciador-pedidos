@@ -22,8 +22,8 @@ public class Principal {
     }
 
     public void menu(){
-        Produto produto = new Produto("Notebook", 3500.0);
-        Categoria categoria = new Categoria(1L, "Eletrônicos");
+        Produto produto = new Produto("PS5", 5500.0);
+        Categoria categoria = new Categoria(1L, "Videogame");
         Pedido pedido = new Pedido(1L, LocalDate.now());
 
         produtoRepository.save(produto);
