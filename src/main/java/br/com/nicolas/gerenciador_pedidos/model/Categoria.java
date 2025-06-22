@@ -1,7 +1,9 @@
 package br.com.nicolas.gerenciador_pedidos.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Entity
 public class Categoria {
     @Id
     private final Long id;
