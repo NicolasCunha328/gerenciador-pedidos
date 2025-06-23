@@ -1,6 +1,5 @@
 package br.com.nicolas.gerenciador_pedidos.model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -9,16 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Categoria {
+public class Fornecedor {
     @Id
     private Long id;
     private String nome;
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-    private List<Produto> produtos = new ArrayList<>();
 
-    public Categoria(){}
+    public Fornecedor(){}
 
-    public Categoria(Long id, String nome) {
+    public Fornecedor(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -31,11 +28,4 @@ public class Categoria {
         return nome;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
 }

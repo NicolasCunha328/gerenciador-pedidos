@@ -2,6 +2,7 @@ package br.com.nicolas.gerenciador_pedidos;
 
 import br.com.nicolas.gerenciador_pedidos.principal.Principal;
 import br.com.nicolas.gerenciador_pedidos.repository.CategoriaRepository;
+import br.com.nicolas.gerenciador_pedidos.repository.FornecedorRepository;
 import br.com.nicolas.gerenciador_pedidos.repository.PedidoRepository;
 import br.com.nicolas.gerenciador_pedidos.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class GerenciadorPedidosApplication implements CommandLineRunner {
 	PedidoRepository pedidoRepository;
 	@Autowired
 	CategoriaRepository categoriaRepository;
+	@Autowired
+	FornecedorRepository fornecedorRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(GerenciadorPedidosApplication.class, args);
@@ -25,7 +28,7 @@ public class GerenciadorPedidosApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Principal principal = new Principal(produtoRepository, pedidoRepository, categoriaRepository);
+		Principal principal = new Principal(produtoRepository, pedidoRepository, categoriaRepository, fornecedorRepository);
 		principal.menu();
 	}
 }
