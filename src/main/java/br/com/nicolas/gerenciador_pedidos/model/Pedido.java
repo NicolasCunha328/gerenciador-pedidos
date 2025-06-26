@@ -1,9 +1,6 @@
 package br.com.nicolas.gerenciador_pedidos.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,8 +8,10 @@ import java.util.List;
 @Entity
 public class Pedido {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate data;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "pedido_produto",
             joinColumns = @JoinColumn(name = "pedido_id"),
@@ -22,8 +21,7 @@ public class Pedido {
 
     public Pedido(){}
 
-    public Pedido(Long id, LocalDate data) {
-        this.id = id;
+    public Pedido(LocalDate data) {
         this.data = data;
     }
 
@@ -33,5 +31,13 @@ public class Pedido {
 
     public Long getId() {
         return id;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 }
